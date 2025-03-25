@@ -7,13 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/id_button_connect_firestore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="48dp"
+        android:text="connectFireStoreDB"
+        app:layout_constraintBottom_toTopOf="@+id/id_button_push_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/id_button_push_named_document"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="push_named_document"
+        app:layout_constraintBottom_toTopOf="@+id/id_button_read_doc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_push_data" />
+
+    <Button
+        android:id="@+id/id_button_read_doc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="63dp"
+        android:text="ReadDoc"
+        app:layout_constraintBottom_toTopOf="@+id/id_textview_read_document"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_push_named_document" />
+
+    <Button
+        android:id="@+id/id_button_push_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="pushData"
+        app:layout_constraintBottom_toTopOf="@+id/id_button_push_named_document"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_connect_firestore" />
+
+    <TextView
+        android:id="@+id/id_textview_read_document"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_read_doc" />
 </androidx.constraintlayout.widget.ConstraintLayout>
