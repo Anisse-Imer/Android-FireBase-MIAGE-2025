@@ -18,6 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
+
+import fr.upjv.miage2025.model.Book;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,6 +92,20 @@ public class MainActivity extends AppCompatActivity {
                                     task -> {
                                         Toast.makeText(MainActivity.this,
                                                 "Push Data - Complete: " + task.isComplete(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                            );
+                    Book l1 = new Book("Le Suicide Français", "Éric Zemmour", 544);
+                    Book l2 = new Book("La France n’a pas dit son dernier mot", "Éric Zemmour", 352);
+                    Book l3 = new Book("Destin Français", "Éric Zemmour", 500);
+                    this.DBFireStore
+                            .collection("books")
+                            .document(l1.getTitle())
+                            .set(l1)
+                            .addOnSuccessListener(
+                                    task -> {
+                                        Toast.makeText(MainActivity.this,
+                                                "Book saved : ",
                                                 Toast.LENGTH_LONG).show();
                                     }
                             );
